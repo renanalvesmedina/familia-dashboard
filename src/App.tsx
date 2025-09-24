@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParticipants } from './hooks/useParticipants';
 import { Header } from './components/Header';
 import { ParticipantCounter } from './components/ParticipantCounter';
