@@ -24,8 +24,8 @@ function App() {
     : participants.filter(p => p.jejum === selectedFilter);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+    <div className="min-h-screen w-full bg-gray-50">
+      <div className="mx-auto px-4 py-8 max-w-7xl">
         <Header onRefresh={refetch} loading={loading} />
         
         <ParticipantCounter 

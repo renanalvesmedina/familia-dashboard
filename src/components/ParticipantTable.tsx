@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Phone, User, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { Participant } from '../types/Participant';
+import { getJejumDescription } from '../utils/util';
 
 interface ParticipantTableProps {
   participants: Participant[];
@@ -55,19 +56,6 @@ export const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants
       return cleaned.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
     }
     return phone;
-  };
-
-  const getJejumDescription = (type: string) => {
-    switch (type) {
-      case 'J1':
-        return '00h às 12h';
-      case 'J2':
-        return 'Uma refeição no dia';
-      case 'J3':
-        return 'Apenas água 3 dias';
-      default:
-        return type;
-    }
   };
 
   if (participants.length === 0) {
