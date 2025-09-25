@@ -7,7 +7,7 @@ import { ParticipantTable } from './components/ParticipantTable';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { ErrorMessage } from './components/ErrorMessage';
 
-function App() {
+export function App() {
   const { participants, loading, error, refetch } = useParticipants();
   const [selectedFilter, setSelectedFilter] = useState('all');
 
@@ -19,9 +19,7 @@ function App() {
     return <ErrorMessage message={error} onRetry={refetch} />;
   }
 
-  const filteredParticipants = selectedFilter === 'all' 
-    ? participants 
-    : participants.filter(p => p.jejum === selectedFilter);
+  const filteredParticipants = selectedFilter === 'all' ? participants : participants.filter(p => p.jejum === selectedFilter);
 
   return (
     <div className="min-h-screen w-full bg-gray-50">
@@ -46,5 +44,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
