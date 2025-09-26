@@ -39,7 +39,7 @@ export function App() {
           />
         </div>
 
-        <ParticipantTable participants={filteredParticipants} />
+        <ParticipantTable participants={filteredParticipants.sort((a, b) => a.data_inscricao.localeCompare(b.data_inscricao)).reverse()} />
       </div>
     </div>
   );
